@@ -31,9 +31,9 @@ createAccount: boolean;
 }
 
 interface ICreateAccountOnMutationArguments {
+userid?: string | null;
+secret?: string | null;
 username?: string | null;
-email?: string | null;
-password?: string | null;
 }
 }
 

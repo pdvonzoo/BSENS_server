@@ -1,10 +1,11 @@
 import * as mongoose from "mongoose";
 
 const productChildSchema = new mongoose.Schema({
-  color: { type: String },
   price: { type: String },
+  color: { type: String },
+  text: { type: String },
   size: { type: String },
-  qty: { type: Date, required: true }
+  qty: { type: Date }
 });
 
 const ProductChild = mongoose.model("ProductChild", productChildSchema);
