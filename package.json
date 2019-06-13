@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "nodemon --exec ts-node src/server.ts",
-    "gen-schema-types": "ts-node src/scripts/createTypes.ts"
+    "gen-schema-types": "ts-node src/Scripts/createTypes.ts"
   },
   "repository": {
     "type": "git",
@@ -19,11 +19,18 @@
   "homepage": "https://github.com/pdvonzoo/BSENS_server#readme",
   "dependencies": {
     "@gql2ts/from-schema": "^1.10.1",
+    "@types/mongoose": "^5.5.6",
+    "@types/passport": "^1.0.0",
+    "@types/passport-jwt": "^3.0.1",
     "dotenv": "^8.0.0",
+    "express": "^4.17.1",
     "gql2ts": "^1.10.1",
     "graphql-tools": "^4.0.4",
     "graphql-yoga": "^1.17.4",
-    "merge-graphql-schemas": "^1.5.8"
+    "merge-graphql-schemas": "^1.5.8",
+    "mongoose": "^5.5.15",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",
