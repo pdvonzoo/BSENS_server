@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/pdvonzoo/BSENS_server/issues"
   },
-  "homepage": "https://github.com/pdvonzoo/BSENS_server#readme"
+  "homepage": "https://github.com/pdvonzoo/BSENS_server#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.1"
+  }
 }
