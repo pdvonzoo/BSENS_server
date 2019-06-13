@@ -22,7 +22,7 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
-something: string | null;
+something: string;
 }
 
 interface IMutation {
@@ -33,6 +33,7 @@ createAccount: boolean;
 interface ICreateAccountOnMutationArguments {
 username?: string | null;
 email?: string | null;
+password?: string | null;
 }
 }
 
