@@ -5,9 +5,6 @@ import { Address } from "../../../Model/Address";
 import { findUser, findAddress } from "../../../Utils/commonUtils";
 
 const resolvers: ResolverMap = {
-  Query: {
-    something: () => "hello"
-  },
   Mutation: {
     createAccount: async (_, args) => {
       const { userid, username, secret, address } = args;

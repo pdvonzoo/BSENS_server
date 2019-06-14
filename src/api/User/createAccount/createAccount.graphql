@@ -1,15 +1,15 @@
-type Address {
-  addressType: String
-  zonecode: String
-  address: String
-  roadAddress: String
-  sido: String
-  sigungu: String
-  bname: String
-  query: String
-  create_at: String
-  updated_at: String
-}
+# type Address {
+#   addressType: String
+#   zonecode: String
+#   address: String
+#   roadAddress: String
+#   sido: String
+#   sigungu: String
+#   bname: String
+#   query: String
+#   create_at: String
+#   updated_at: String
+# }
 
 type Mutation {
   createAccount(
@@ -17,10 +17,6 @@ type Mutation {
     secret: String
     username: String
     zonecode: String
-    address: Address
+    address: String
   ): Boolean!
-}
-
-type Query {
-  something: String!
 }

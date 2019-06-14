@@ -22,7 +22,20 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
-something: string;
+me: IUser | null;
+}
+
+interface IUser {
+__typename: "User";
+userid: string | null;
+password: string | null;
+email: string | null;
+addtess: string | null;
+phonenumber: string | null;
+username: string | null;
+userimage: string | null;
+create_at: string | null;
+updated_at: string | null;
 }
 
 interface IMutation {
@@ -36,7 +49,8 @@ interface ICreateAccountOnMutationArguments {
 userid?: string | null;
 secret?: string | null;
 username?: string | null;
-address?: IAddress | null;
+zonecode?: string | null;
+address?: string | null;
 }
 
 interface IDeleteAccountOnMutationArguments {
@@ -48,20 +62,6 @@ username?: string | null;
 interface IUpdateAccountOnMutationArguments {
 userid?: string | null;
 username?: string | null;
-}
-
-interface IAddress {
-__typename: "Address";
-addressType: string | null;
-zonecode: string | null;
-address: string | null;
-roadAddress: string | null;
-sido: string | null;
-sigungu: string | null;
-bname: string | null;
-query: string | null;
-create_at: string | null;
-updated_at: string | null;
 }
 }
 

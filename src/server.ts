@@ -8,11 +8,11 @@ import { authenticateToken } from "./MiddleWare/authenticateJwt";
 const PORT = process.env.PORT || 5000;
 
 const server = new GraphQLServer({
-  schema: genSchema() as any
-  // context: ({ request }) => ({
-  //   url: request.protocol + "://" + request.get("host"),
-  //   req: request
-  // })
+  schema: genSchema() as any,
+  context: ({ request }) => ({
+    // url: request.protocol + "://" + request.get("host"),
+    req: request
+  })
 });
 
 mongoose.connect(process.env.DATABASE_URL as string, {
