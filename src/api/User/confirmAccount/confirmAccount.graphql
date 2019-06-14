@@ -1,0 +1,8 @@
+type Token {
+  accessToken: String
+  refreshToken: String
+}
+
+type Query {
+  cofirmAccount: Token
+}
