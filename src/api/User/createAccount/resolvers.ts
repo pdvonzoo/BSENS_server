@@ -1,7 +1,8 @@
 import * as bcrypt from "bcrypt";
 import { ResolverMap } from "../../../Utils/gqlUtils";
 import { User } from "../../../Model/User";
-import { findUser } from "../../../Utils/commonUtils";
+import { Address } from "../../../Model/Address";
+import { findUser, findAddress } from "../../../Utils/commonUtils";
 
 const resolvers: ResolverMap = {
   Query: {
@@ -19,8 +20,20 @@ const resolvers: ResolverMap = {
       if (!password) {
         throw new Error("password hash error");
       }
-      const newUser = await new User({ userid, username, password, address });
+      const newUser = await new User({
+        userid,
+        username,
+        password,
+        zonecode: address.zonecode
+      });
       await newUser.save();
+
+      const getAddress = await findAddress({ zonecode: address.zonecode });
+      if (!getAddress) {
+        const newAddress = await new Address({ ...address });
+        await newAddress.save();
+      }
+
       return true;
     }
   }

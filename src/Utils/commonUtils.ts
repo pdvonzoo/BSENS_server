@@ -1,4 +1,5 @@
 import { User } from "../Model/User";
+import { Address } from "../Model/Address";
 
 interface UserInfo {
   username: string;
@@ -12,4 +13,7 @@ export const deleteUser = ({ userid }: { userid: string }) =>
 
 export const updateUser = ({ userid }: { userid: string }, payload: UserInfo) =>
   User.findOneAndUpdate({ userid }, { ...payload });
+
+export const findAddress = ({ zonecode }: { zonecode: string }) =>
+  Address.findOne({ zonecode });
 // export const generateToken = id:string => jwt.sign({ id }, process.env.JWT_SECRET);

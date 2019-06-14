@@ -16,6 +16,7 @@ type Mutation {
     userid: String
     secret: String
     username: String
+    zonecode: String
     address: Address
   ): Boolean!
 }
