@@ -1,7 +1,7 @@
 import * as bcrypt from "bcrypt";
-import { ResolverMap } from "../../Utils/gqlUtils";
-import { User } from "../../Model/User";
-import { findUser } from "../../Utils/commonUtils";
+import { ResolverMap } from "../../../Utils/gqlUtils";
+import { User } from "../../../Model/User";
+import { findUser } from "../../../Utils/commonUtils";
 
 const resolvers: ResolverMap = {
   Query: {
