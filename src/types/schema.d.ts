@@ -28,9 +28,16 @@ something: string;
 interface IMutation {
 __typename: "Mutation";
 createAccount: boolean;
+deleteAccount: boolean;
 }
 
 interface ICreateAccountOnMutationArguments {
+userid?: string | null;
+secret?: string | null;
+username?: string | null;
+}
+
+interface IDeleteAccountOnMutationArguments {
 userid?: string | null;
 secret?: string | null;
 username?: string | null;

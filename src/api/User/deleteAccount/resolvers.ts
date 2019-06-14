@@ -5,8 +5,8 @@ const resolvers: ResolverMap = {
   Mutation: {
     deleteAccount: async (_, args) => {
       const { userid } = args;
-      const overlapUser = await deleteUser({ userid });
-      if (!overlapUser) {
+      const removedUser = await deleteUser({ userid });
+      if (!removedUser) {
         throw new Error("존재하지 않는 계정입니다.");
       }
       return true;

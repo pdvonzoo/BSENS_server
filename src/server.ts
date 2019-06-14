@@ -16,7 +16,8 @@ const server = new GraphQLServer({
 });
 
 mongoose.connect(process.env.DATABASE_URL as string, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 const db = mongoose.connection;
