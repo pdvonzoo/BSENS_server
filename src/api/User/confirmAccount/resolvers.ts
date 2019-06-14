@@ -18,7 +18,7 @@ const resolvers: ResolverMap = {
       res.cookie("refresh-token", refreshToken);
       res.cookie("access-token", accessToken);
 
-      return user;
+      return true;
     }
   }
 };
