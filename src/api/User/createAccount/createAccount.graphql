@@ -1,5 +1,23 @@
+type Address {
+  addressType: String
+  zonecode: String
+  address: String
+  roadAddress: String
+  sido: String
+  sigungu: String
+  bname: String
+  query: String
+  create_at: String
+  updated_at: String
+}
+
 type Mutation {
-  createAccount(userid: String, secret: String, username: String): Boolean!
+  createAccount(
+    userid: String
+    secret: String
+    username: String
+    address: Address
+  ): Boolean!
 }
 
 type Query {

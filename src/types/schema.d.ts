@@ -29,18 +29,39 @@ interface IMutation {
 __typename: "Mutation";
 createAccount: boolean;
 deleteAccount: boolean;
+updateAccount: boolean;
 }
 
 interface ICreateAccountOnMutationArguments {
 userid?: string | null;
 secret?: string | null;
 username?: string | null;
+address?: IAddress | null;
 }
 
 interface IDeleteAccountOnMutationArguments {
 userid?: string | null;
 secret?: string | null;
 username?: string | null;
+}
+
+interface IUpdateAccountOnMutationArguments {
+userid?: string | null;
+username?: string | null;
+}
+
+interface IAddress {
+__typename: "Address";
+addressType: string | null;
+zonecode: string | null;
+address: string | null;
+roadAddress: string | null;
+sido: string | null;
+sigungu: string | null;
+bname: string | null;
+query: string | null;
+create_at: string | null;
+updated_at: string | null;
 }
 }
 
