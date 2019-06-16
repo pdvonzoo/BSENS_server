@@ -22,6 +22,7 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
+cofirmAccount: boolean | null;
 me: IUser | null;
 }
 
@@ -47,10 +48,13 @@ updateAccount: boolean;
 
 interface ICreateAccountOnMutationArguments {
 userid?: string | null;
+email?: string | null;
 secret?: string | null;
 username?: string | null;
+phonenumber?: string | null;
 zonecode?: string | null;
 address?: string | null;
+userimage?: string | null;
 }
 
 interface IDeleteAccountOnMutationArguments {
