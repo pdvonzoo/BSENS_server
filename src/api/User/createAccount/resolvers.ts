@@ -8,6 +8,7 @@ const resolvers: ResolverMap = {
   Mutation: {
     createAccount: async (_, args) => {
       const { userid, username, secret, address } = args;
+
       const overlapUser = await findUser({ userid });
       if (overlapUser) {
         throw new Error("중복된 아이디입니다.");
