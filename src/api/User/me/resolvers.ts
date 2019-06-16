@@ -12,7 +12,7 @@ const resolvers: ResolverMap = {
         }
       }
     ) => {
-      const user = await findUser({ userid });
+      const user = await findUser({ payload: { userid } });
       if (!user) {
         throw new Error("잘못된 정보의 사용자입니다.");
       }

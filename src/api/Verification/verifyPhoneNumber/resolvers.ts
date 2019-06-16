@@ -1,13 +1,14 @@
+import axios from "axios";
 import { ResolverMap } from "../../../Utils/gqlUtils";
 import { findUser } from "../../../Utils/commonUtils";
 
 const resolvers: ResolverMap = {
   Mutation: {
-    updateAccount: async (_, args) => {
+    verifyPhoneNumber: async (_, args) => {
       const { phonenumber } = args;
-      const changedUser = await findUser({ payload: { phonenumber } });
-      if (!changedUser) {
-        throw new Error("유저 정보 변경이 실패하였습니다.");
+      const overlapPhone = await findUser({ payload: { phonenumber } });
+      if (!overlapPhone) {
+        throw new Error("중복된 핸드폰 번호입니다.");
       }
       return true;
     }

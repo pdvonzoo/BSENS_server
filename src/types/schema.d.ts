@@ -44,6 +44,7 @@ __typename: "Mutation";
 createAccount: boolean;
 deleteAccount: boolean;
 updateAccount: boolean;
+verifyPhoneNumber: boolean;
 }
 
 interface ICreateAccountOnMutationArguments {
@@ -66,6 +67,10 @@ username?: string | null;
 interface IUpdateAccountOnMutationArguments {
 userid?: string | null;
 username?: string | null;
+}
+
+interface IVerifyPhoneNumberOnMutationArguments {
+phonenumber?: string | null;
 }
 }
 
