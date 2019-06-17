@@ -7,6 +7,9 @@ const resolvers: ResolverMap = {
   Mutation: {
     createAccount: async (_, args) => {
       const { userid, username, secret } = args;
+      if (!args.role) {
+        args.role = "customer";
+      }
       const overlapUser = await findUser({ payload: { userid } });
       if (overlapUser) {
         throw new Error("중복된 아이디입니다.");
@@ -17,6 +20,7 @@ const resolvers: ResolverMap = {
         throw new Error("password hash error");
       }
       const newUser = await new User({
+        role: args.role,
         userid,
         username,
         password

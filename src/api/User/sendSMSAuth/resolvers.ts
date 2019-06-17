@@ -7,12 +7,12 @@ const twilioClient = twilio(
 
 const resolvers: ResolverMap = {
   Mutation: {
-    sendSMSAuth: async (_, __) => {
+    sendSMSAuth: async (_, args) => {
       twilioClient.messages
         .create({
-          body: "테스트 메세지입니다.",
+          body: "테스트 문자입니다.",
           from: process.env.PHONE_NUMBER,
-          to: "+8201088570194"
+          to: `+82${args.phonenumber}`
         })
         .then(message => console.log(message));
       return true;
