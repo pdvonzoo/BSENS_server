@@ -1,0 +1,56 @@
+{
+  "name": "BSENS_server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon --exec ts-node src/server.ts",
+    "gen-schema-types": "ts-node src/Scripts/createTypes.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdvonzoo/BSENS_server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdvonzoo/BSENS_server/issues"
+  },
+  "homepage": "https://github.com/pdvonzoo/BSENS_server#readme",
+  "dependencies": {
+    "@gql2ts/from-schema": "^1.10.1",
+    "@types/cookie-parser": "^1.4.1",
+    "@types/mongoose": "^5.5.6",
+    "@types/morgan": "^1.7.35",
+    "@types/passport": "^1.0.0",
+    "@types/passport-jwt": "^3.0.1",
+    "axios": "^0.19.0",
+    "bcrypt": "^3.0.6",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "gql2ts": "^1.10.1",
+    "graphql-tools": "^4.0.4",
+    "graphql-yoga": "^1.17.4",
+    "jsonwebtoken": "^8.5.1",
+    "merge-graphql-schemas": "^1.5.8",
+    "mongoose": "^5.5.15",
+    "morgan": "^1.9.1",
+    "ngrok": "^3.2.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "twilio": "^3.32.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/dotenv": "^6.1.1",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.2.0",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.2"
+  }
+}

@@ -1,0 +1,3 @@
+type Mutation {
+  updateAccount(userid: String, username: String): Boolean!
+}
