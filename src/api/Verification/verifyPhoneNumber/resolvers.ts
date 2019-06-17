@@ -1,4 +1,3 @@
-import axios from "axios";
 import { ResolverMap } from "../../../Utils/gqlUtils";
 import { findUser } from "../../../Utils/commonUtils";
 
