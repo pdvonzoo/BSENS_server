@@ -43,11 +43,13 @@ interface IMutation {
 __typename: "Mutation";
 createAccount: boolean;
 deleteAccount: boolean;
+sendSMSAuth: boolean;
 updateAccount: boolean;
 verifyPhoneNumber: boolean;
 }
 
 interface ICreateAccountOnMutationArguments {
+role?: string | null;
 userid?: string | null;
 email?: string | null;
 secret?: string | null;
@@ -62,6 +64,10 @@ interface IDeleteAccountOnMutationArguments {
 userid?: string | null;
 secret?: string | null;
 username?: string | null;
+}
+
+interface ISendSMSAuthOnMutationArguments {
+verificationNumber?: string | null;
 }
 
 interface IUpdateAccountOnMutationArguments {

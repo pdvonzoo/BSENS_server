@@ -1,5 +1,7 @@
+import "dotenv/config";
 import * as twilio from "twilio";
 import { ResolverMap } from "../../../Utils/gqlUtils";
+
 const twilioClient = twilio(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
