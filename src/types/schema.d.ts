@@ -22,7 +22,6 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
-cofirmAccount: boolean | null;
 me: IUser | null;
 }
 
@@ -41,11 +40,23 @@ updated_at: string | null;
 
 interface IMutation {
 __typename: "Mutation";
+createProduct: boolean;
+cofirmAccount: boolean | null;
 createAccount: boolean;
 deleteAccount: boolean;
 sendSMSAuth: boolean;
 updateAccount: boolean;
 verifyPhoneNumber: boolean;
+}
+
+interface ICreateProductOnMutationArguments {
+title?: string | null;
+description?: string | null;
+}
+
+interface ICofirmAccountOnMutationArguments {
+userid?: string | null;
+secret?: string | null;
 }
 
 interface ICreateAccountOnMutationArguments {

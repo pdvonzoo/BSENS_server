@@ -7,7 +7,7 @@ interface UserInfo {
 }
 
 export const findUser = ({ payload }: { payload: any }) =>
-  User.findOne({ payload });
+  User.findOne({ ...payload });
 
 export const deleteUser = ({ userid }: { userid: string }) =>
   User.findOneAndRemove({ userid });
@@ -19,13 +19,13 @@ export const findAddress = ({ zonecode }: { zonecode: string }) =>
   Address.findOne({ zonecode });
 
 export const generateToken = (user: any) => {
-  const refreshToken = sign(
+  const accessToken = sign(
     { userid: user.userid },
     process.env.REFRESH_TOKEN_SECRET as string,
     { expiresIn: "7d" }
   );
 
-  const accessToken = sign(
+  const refreshToken = sign(
     { userid: user.userid, count: user.count },
     process.env.ACCESS_TOKEN_SECRET as string,
     { expiresIn: "15min" }

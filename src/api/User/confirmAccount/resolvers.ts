@@ -3,11 +3,11 @@ import { ResolverMap } from "../../../Utils/gqlUtils";
 import { findUser, generateToken } from "../../../Utils/commonUtils";
 
 const resolvers: ResolverMap = {
-  Query: {
+  Mutation: {
     cofirmAccount: async (_, args, { res }: any) => {
       const user: any = await findUser({ payload: { userid: args.userid } });
       if (!user) {
-        throw new Error("잘못된 아이디입니다.");
+        throw new Error("해당 아이디가 없습니다.");
       }
       const valid = await bcrypt.compare(args.secret, user.password);
       if (!valid) {
