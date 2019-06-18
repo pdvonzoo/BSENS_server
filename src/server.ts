@@ -13,7 +13,13 @@ const PORT = process.env.PORT || 5000;
 
 const server = new GraphQLServer({
   schema: genSchema() as any,
-  context: ({ req, res }: any) => ({ req, res })
+  context: ({
+    request,
+    response
+  }: {
+    request: Request;
+    response: Response;
+  }) => ({ request, response })
 });
 
 mongoose.connect(process.env.DATABASE_URL as string, {

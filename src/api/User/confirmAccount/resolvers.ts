@@ -4,7 +4,8 @@ import { findUser, generateToken } from "../../../Utils/commonUtils";
 
 const resolvers: ResolverMap = {
   Mutation: {
-    cofirmAccount: async (_, args, { res }: any) => {
+    cofirmAccount: async (_, args, { request, response }: any) => {
+      console.log(request, response);
       const user: any = await findUser({ payload: { userid: args.userid } });
       if (!user) {
         throw new Error("해당 아이디가 없습니다.");
@@ -15,8 +16,8 @@ const resolvers: ResolverMap = {
       }
 
       const { refreshToken, accessToken } = generateToken(user);
-      res.cookie("refresh-token", refreshToken);
-      res.cookie("access-token", accessToken);
+      response.cookie("refresh-token", refreshToken);
+      response.cookie("access-token", accessToken);
 
       return true;
     }

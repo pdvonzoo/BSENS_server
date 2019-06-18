@@ -3,8 +3,8 @@ import { ResolverMap } from "../../../Utils/gqlUtils";
 
 const resolvers: ResolverMap = {
   Mutation: {
-    createProduct: async (_, __, { req }) => {
-      console.log(req);
+    createProduct: async (_, __, { request }: any) => {
+      console.log(request);
       // const {title, description} = args;
       // const newProduct = await new Product({
       //   role: args.role,
