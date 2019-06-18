@@ -4,7 +4,6 @@ import { GraphQLServer } from "graphql-yoga";
 import * as mongoose from "mongoose";
 import * as cookieParser from "cookie-parser";
 import * as logger from "morgan";
-import * as cors from "cors";
 import genSchema from "./Utils/genSchema";
 // import { authenticateToken } from "./MiddleWare/authenticateJwt";
 import { verify } from "jsonwebtoken";
@@ -31,9 +30,6 @@ const db = mongoose.connection;
 db.on("error", error => console.error(error));
 db.once("open", () => console.log("Connected to Mongoose"));
 
-server.express.use(
-  cors({ origin: "http://localhost:3000", credentials: true })
-);
 server.express.use(logger("dev"));
 server.express.use(cookieParser());
 server.express.use((req: any, _: any, next: any) => {
@@ -54,7 +50,11 @@ server.express.use((req: any, _: any, next: any) => {
 
 server.start(
   {
-    port: PORT
+    port: PORT,
+    cors: {
+      credentials: true,
+      origin: ["http://localhost:3000"]
+    }
   },
   () => {
     console.log(`Server running on http://localhost:${PORT}`);

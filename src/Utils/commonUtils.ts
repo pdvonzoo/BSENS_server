@@ -1,6 +1,10 @@
+import "dotenv/config";
 import { User } from "../Model/User";
 import { Address } from "../Model/Address";
 import { sign } from "jsonwebtoken";
+import { Product } from "../Model/Product";
+
+// Auth
 
 interface UserInfo {
   username: string;
@@ -33,3 +37,18 @@ export const generateToken = (user: any) => {
 
   return { refreshToken, accessToken };
 };
+
+// Product
+
+interface ProductInfo {
+  productname: string;
+}
+
+export const findProduct = ({ payload }: { payload: any }) =>
+  Product.findOne({ ...payload });
+
+export const deleteProduct = ({ id }: { id: string }) =>
+  Product.findOneAndRemove({ id });
+
+export const updateProduct = ({ id }: { id: string }, payload: ProductInfo) =>
+  Product.findOneAndUpdate({ id }, { ...payload });

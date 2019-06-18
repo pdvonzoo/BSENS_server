@@ -41,6 +41,7 @@ updated_at: string | null;
 interface IMutation {
 __typename: "Mutation";
 createProduct: boolean;
+deleteProduct: boolean;
 cofirmAccount: boolean | null;
 createAccount: boolean;
 deleteAccount: boolean;
@@ -50,8 +51,12 @@ verifyPhoneNumber: boolean;
 }
 
 interface ICreateProductOnMutationArguments {
-title?: string | null;
+productname?: string | null;
 description?: string | null;
+}
+
+interface IDeleteProductOnMutationArguments {
+productname?: string | null;
 }
 
 interface ICofirmAccountOnMutationArguments {
