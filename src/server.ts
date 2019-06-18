@@ -31,12 +31,13 @@ const db = mongoose.connection;
 db.on("error", error => console.error(error));
 db.once("open", () => console.log("Connected to Mongoose"));
 
-server.express.use(cors());
+server.express.use(
+  cors({ origin: "http://localhost:3000", credentials: true })
+);
 server.express.use(logger("dev"));
 server.express.use(cookieParser());
 server.express.use((req: any, _: any, next: any) => {
   const accessToken = req.cookies["access-token"];
-  console.log(accessToken);
   if (accessToken) {
     try {
       const data = verify(accessToken, process.env
