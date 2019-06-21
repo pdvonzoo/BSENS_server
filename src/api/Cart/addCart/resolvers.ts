@@ -5,16 +5,17 @@ const resolvers: ResolverMap = {
   Mutation: {
     addCart: async (_, args, { request }: any) => {
       const { productid } = args;
-      const order: any = await Order.findOne({ userid: request.user.id });
+      const order: any = await Order.findOne({ userid: request.userid });
       if (order) {
-        order.products = [...order.products, { productid }];
+        await order.products.push({ productid });
+        await order.save();
         return true;
       }
       const newOrder = await new Order({
         products: [{ productid }],
-        userid: request.user.id
+        userid: request.userid
       });
-      newOrder.save();
+      await newOrder.save();
       return true;
     }
   }

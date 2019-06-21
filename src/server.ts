@@ -38,7 +38,7 @@ server.express.use((req: any, _: any, next: any) => {
     try {
       const data = verify(accessToken, process.env
         .ACCESS_TOKEN_SECRET as string) as any;
-      req.id = data.id;
+      req.userid = data.id;
     } catch (err) {
       console.log(err);
     }
