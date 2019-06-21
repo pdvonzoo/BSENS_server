@@ -4,12 +4,12 @@ import { Product } from "../../../Model/Product";
 const resolvers: ResolverMap = {
   Mutation: {
     createProduct: async (_, args) => {
-      const { productname, description } = args;
+      const { productname, productimage } = args;
       const newProduct = await new Product({
         productname,
-        description
+        productimage
       });
-      newProduct.save();
+      await newProduct.save();
       return true;
     }
   }

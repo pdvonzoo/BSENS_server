@@ -23,14 +23,15 @@ export const findAddress = ({ zonecode }: { zonecode: string }) =>
   Address.findOne({ zonecode });
 
 export const generateToken = (user: any) => {
-  const accessToken = sign(
-    { userid: user.userid },
+  console.log(user);
+  const refreshToken = sign(
+    { id: user._id },
     process.env.REFRESH_TOKEN_SECRET as string,
     { expiresIn: "7d" }
   );
 
-  const refreshToken = sign(
-    { userid: user.userid, count: user.count },
+  const accessToken = sign(
+    { id: user._id, count: user.count },
     process.env.ACCESS_TOKEN_SECRET as string,
     { expiresIn: "15min" }
   );
