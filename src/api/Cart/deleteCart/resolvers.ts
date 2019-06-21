@@ -3,7 +3,7 @@ import { Order } from "../../../Model/Order";
 
 const resolvers: ResolverMap = {
   Mutation: {
-    deleteProduct: async (_, args, { request }: any) => {
+    deleteCart: async (_, args, { request }: any) => {
       const { productid } = args;
       const order: any = await Order.findOne({ userid: request.user.id });
       if (!order) {

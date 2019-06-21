@@ -22,7 +22,15 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
+showCart: Array<IProduct | null> | null;
+seeProducts: Array<IProduct | null> | null;
 me: IUser | null;
+}
+
+interface IProduct {
+__typename: "Product";
+productname: string | null;
+productimage: string | null;
 }
 
 interface IUser {
@@ -40,8 +48,11 @@ updated_at: string | null;
 
 interface IMutation {
 __typename: "Mutation";
-createProduct: boolean;
-deleteProduct: boolean;
+addCart: boolean | null;
+deleteCart: boolean | null;
+createProduct: boolean | null;
+deleteProduct: boolean | null;
+updateProduct: boolean | null;
 cofirmAccount: boolean | null;
 createAccount: boolean;
 deleteAccount: boolean;
@@ -50,12 +61,24 @@ updateAccount: boolean;
 verifyPhoneNumber: boolean;
 }
 
+interface IAddCartOnMutationArguments {
+productid?: string | null;
+}
+
+interface IDeleteCartOnMutationArguments {
+productid?: string | null;
+}
+
 interface ICreateProductOnMutationArguments {
 productname?: string | null;
 description?: string | null;
 }
 
 interface IDeleteProductOnMutationArguments {
+productname?: string | null;
+}
+
+interface IUpdateProductOnMutationArguments {
 productname?: string | null;
 }
 
