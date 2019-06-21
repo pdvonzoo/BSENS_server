@@ -77,7 +77,7 @@ productimage?: string | null;
 }
 
 interface IDeleteProductOnMutationArguments {
-productname?: string | null;
+productid?: string | null;
 }
 
 interface IUpdateProductOnMutationArguments {

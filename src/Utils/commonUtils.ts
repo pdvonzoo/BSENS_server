@@ -48,8 +48,8 @@ interface ProductInfo {
 export const findProduct = ({ payload }: { payload: any }) =>
   Product.findOne({ ...payload });
 
-export const deleteProduct = ({ id }: { id: string }) =>
-  Product.findOneAndRemove({ id });
+export const removeProduct = ({ _id }: any) =>
+  Product.findOneAndRemove({ _id });
 
-export const updateProduct = ({ id }: { id: string }, payload: ProductInfo) =>
+export const updateProduct = ({ id }: any, payload: ProductInfo) =>
   Product.findOneAndUpdate({ id }, { ...payload });
