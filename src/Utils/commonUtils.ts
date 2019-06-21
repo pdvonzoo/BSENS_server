@@ -10,8 +10,7 @@ interface UserInfo {
   username: string;
 }
 
-export const findUser = ({ payload }: { payload: any }) =>
-  User.findOne({ ...payload });
+export const findUser = ({ payload }: any) => User.findOne({ ...payload });
 
 export const deleteUser = ({ userid }: { userid: string }) =>
   User.findOneAndRemove({ userid });
