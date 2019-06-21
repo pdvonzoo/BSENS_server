@@ -29,12 +29,14 @@ me: IUser | null;
 
 interface IProduct {
 __typename: "Product";
+_id: string;
 productname: string | null;
 productimage: string | null;
 }
 
 interface IUser {
 __typename: "User";
+_id: string;
 userid: string | null;
 password: string | null;
 email: string | null;

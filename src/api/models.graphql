@@ -1,4 +1,5 @@
 type User {
+  _id: ID!
   userid: String
   password: String
   email: String
@@ -11,6 +12,7 @@ type User {
 }
 
 type Product {
+  _id: ID!
   productname: String
   productimage: String
 }

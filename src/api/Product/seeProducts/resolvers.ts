@@ -5,6 +5,7 @@ const resolvers: ResolverMap = {
   Query: {
     seeProducts: async (_, __) => {
       const products = await Product.find();
+      console.log(products);
       if (!products) {
         throw new Error("존재하는 제품이 없습니다.");
       }
