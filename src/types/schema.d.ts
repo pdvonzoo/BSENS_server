@@ -46,6 +46,7 @@ username: string | null;
 userimage: string | null;
 create_at: string | null;
 updated_at: string | null;
+count: number | null;
 }
 
 interface IMutation {
@@ -56,6 +57,7 @@ createProduct: boolean | null;
 deleteProduct: boolean | null;
 updateProduct: boolean | null;
 cofirmAccount: boolean | null;
+invalidateTokens: boolean | null;
 createAccount: boolean;
 deleteAccount: boolean;
 sendSMSAuth: boolean;

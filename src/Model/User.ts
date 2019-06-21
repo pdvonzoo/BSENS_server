@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
   phonenumber: { type: Number },
   username: { type: String },
   userimage: { type: String },
+  count: { type: Number },
   create_at: { type: Date },
   updated_at: { type: Date }
 });

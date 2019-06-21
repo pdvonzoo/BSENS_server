@@ -9,6 +9,7 @@ type User {
   userimage: String
   create_at: String
   updated_at: String
+  count: Int
 }
 
 type Product {

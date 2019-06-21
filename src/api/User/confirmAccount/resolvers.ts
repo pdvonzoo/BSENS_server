@@ -19,6 +19,18 @@ const resolvers: ResolverMap = {
       response.cookie("refresh-token", refreshToken);
       response.cookie("access-token", accessToken);
       return true;
+    },
+    invalidateTokens: async (_, __, { request }: any) => {
+      if (!request.userid) {
+        return false;
+      }
+      const user: any = await findUser({ payload: { userid: request.userid } });
+      if (!user) {
+        return false;
+      }
+      user.count += 1;
+      await user.save();
+      return true;
     }
   }
 };

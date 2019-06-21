@@ -32,7 +32,7 @@ export const generateToken = (user: any) => {
   const accessToken = sign(
     { id: user._id, count: user.count },
     process.env.ACCESS_TOKEN_SECRET as string,
-    { expiresIn: "15min" }
+    { expiresIn: "60min" }
   );
 
   return { refreshToken, accessToken };
