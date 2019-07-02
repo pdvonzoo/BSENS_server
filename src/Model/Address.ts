@@ -5,6 +5,7 @@ const addressSchema = new mongoose.Schema({
   zonecode: { type: String },
   address: { type: String },
   roadAddress: { type: String },
+  jibunAddress: { type: String },
   sido: { type: String },
   sigungu: { type: String },
   bname: { type: String },

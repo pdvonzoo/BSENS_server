@@ -3,7 +3,7 @@ type User {
   userid: String
   password: String
   email: String
-  addtess: String
+  addressid: String
   phonenumber: String
   username: String
   userimage: String
@@ -16,4 +16,19 @@ type Product {
   _id: ID!
   productname: String
   productimage: String
+}
+
+type Address {
+  _id: ID!
+  addressType: String
+  zonecode: String
+  address: String
+  roadAddress: String
+  jibunAddress: String
+  sido: String
+  sigungu: String
+  bname: String
+  query: String
+  create_at: Int
+  updated_at: Int
 }

@@ -40,7 +40,7 @@ _id: string;
 userid: string | null;
 password: string | null;
 email: string | null;
-addtess: string | null;
+addressid: string | null;
 phonenumber: string | null;
 username: string | null;
 userimage: string | null;
@@ -76,6 +76,10 @@ productid?: string | null;
 interface ICreateProductOnMutationArguments {
 productname?: string | null;
 productimage?: string | null;
+price?: string | null;
+color?: string | null;
+text?: string | null;
+size?: string | null;
 }
 
 interface IDeleteProductOnMutationArguments {
@@ -99,7 +103,6 @@ secret?: string | null;
 username?: string | null;
 phonenumber?: string | null;
 zonecode?: string | null;
-address?: string | null;
 userimage?: string | null;
 }
 
@@ -120,6 +123,22 @@ username?: string | null;
 
 interface IVerifyPhoneNumberOnMutationArguments {
 phonenumber?: string | null;
+}
+
+interface IAddress {
+__typename: "Address";
+_id: string;
+addressType: string | null;
+zonecode: string | null;
+address: string | null;
+roadAddress: string | null;
+jibunAddress: string | null;
+sido: string | null;
+sigungu: string | null;
+bname: string | null;
+query: string | null;
+create_at: number | null;
+updated_at: number | null;
 }
 }
 
