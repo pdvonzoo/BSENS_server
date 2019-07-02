@@ -32,6 +32,7 @@ __typename: "Product";
 _id: string;
 productname: string | null;
 productimage: string | null;
+productchildid: string | null;
 }
 
 interface IUser {

@@ -3,6 +3,7 @@ import { User } from "../Model/User";
 import { Address } from "../Model/Address";
 import { sign } from "jsonwebtoken";
 import { Product } from "../Model/Product";
+import { ProductChild } from "../Model/ProductChild";
 
 // Auth
 
@@ -47,8 +48,11 @@ interface ProductInfo {
 export const findProduct = ({ payload }: { payload: any }) =>
   Product.findOne({ ...payload });
 
-export const removeProduct = ({ _id }: any) =>
-  Product.findOneAndRemove({ _id });
+export const removeProduct = ({ _id }: any) => {
+  const product = Product.findOneAndRemove({ _id });
+  ProductChild.findOneAndRemove({ _id: product.productchildid });
+  return product;
+};
 
 export const updateProduct = ({ id }: any, payload: ProductInfo) =>
   Product.findOneAndUpdate({ id }, { ...payload });

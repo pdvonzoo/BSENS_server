@@ -16,6 +16,7 @@ type Product {
   _id: ID!
   productname: String
   productimage: String
+  productchildid: String
 }
 
 type Address {
