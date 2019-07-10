@@ -52,7 +52,7 @@ count: number | null;
 
 interface IMutation {
 __typename: "Mutation";
-UploadMainInfo: boolean | null;
+UploadMainInfo: IAWSinfo | null;
 addCart: boolean | null;
 deleteCart: boolean | null;
 createProduct: boolean | null;
@@ -130,6 +130,12 @@ username?: string | null;
 
 interface IVerifyPhoneNumberOnMutationArguments {
 phonenumber?: string | null;
+}
+
+interface IAWSinfo {
+__typename: "AWSinfo";
+signedRequest: string | null;
+url: string | null;
 }
 
 interface IAddress {

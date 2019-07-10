@@ -9,11 +9,17 @@ const uploadImgToAws = async ({ filename, filetype }: any) => {
       region: "ap-northeast-2"
     });
 
-    const s3 = new aws.S3();
+    const s3 = new aws.S3({
+      signatureVersion: "v4",
+      accessKeyId: process.env.AMAZON_IAM_PUBLIC,
+      secretAccessKey: process.env.AMAZON_IAM_PRIVATE,
+      region: "ap-northeast-2"
+    });
 
     const s3Params = {
       Bucket: s3Bucket,
       Key: filename,
+      Expires: 60,
       ContentType: filetype,
       ACL: "public-read"
     };
