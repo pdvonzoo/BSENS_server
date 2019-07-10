@@ -52,6 +52,7 @@ count: number | null;
 
 interface IMutation {
 __typename: "Mutation";
+UploadMainInfo: boolean | null;
 addCart: boolean | null;
 deleteCart: boolean | null;
 createProduct: boolean | null;
@@ -64,6 +65,11 @@ deleteAccount: boolean;
 sendSMSAuth: boolean;
 updateAccount: boolean;
 verifyPhoneNumber: boolean;
+}
+
+interface IUploadMainInfoOnMutationArguments {
+filename?: string | null;
+filetype?: string | null;
 }
 
 interface IAddCartOnMutationArguments {

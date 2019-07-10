@@ -45,11 +45,11 @@ interface ProductInfo {
   productname: string;
 }
 
-export const findProduct = ({ payload }: { payload: any }) =>
+export const findProduct = ({ payload }: any) =>
   Product.findOne({ ...payload });
 
 export const removeProduct = ({ _id }: any) => {
-  const product = Product.findOneAndRemove({ _id });
+  const product: any = Product.findOneAndRemove({ _id });
   ProductChild.findOneAndRemove({ _id: product.productchildid });
   return product;
 };

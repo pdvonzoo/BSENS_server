@@ -1,0 +1,3 @@
+type Mutation {
+  UploadMainInfo(filename: String, filetype: String): Boolean
+}
