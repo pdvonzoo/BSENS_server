@@ -17,23 +17,11 @@ const uploadImgToAws = async ({ filename, filetype }: any) => {
       region: "ap-northeast-2",
       signatureVersion: "v4"
     });
-    // const response = await s3
-    //   .listObjectsV2({
-    //     Bucket: "bsens-storage"
-    //   })
-    //   .promise();
-    // console.log(response);
+
     const s3Params = {
       Bucket: "bsens-project",
       Key: filename
     };
-    s3.listBuckets((err, data) => {
-      if (err) {
-        console.log("Error", err);
-      } else {
-        console.log("Success", data.Buckets);
-      }
-    });
 
     const signedRequest = await s3.getSignedUrl("putObject", s3Params);
     const url = `https://${s3Bucket}.s3.amazonaws.com/${filename}`;

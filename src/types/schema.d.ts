@@ -52,6 +52,7 @@ count: number | null;
 
 interface IMutation {
 __typename: "Mutation";
+SetImages: boolean | null;
 UploadMainInfo: IAWSinfo | null;
 addCart: boolean | null;
 deleteCart: boolean | null;
@@ -65,6 +66,11 @@ deleteAccount: boolean;
 sendSMSAuth: boolean;
 updateAccount: boolean;
 verifyPhoneNumber: boolean;
+}
+
+interface ISetImagesOnMutationArguments {
+title?: string | null;
+url?: string | null;
 }
 
 interface IUploadMainInfoOnMutationArguments {
