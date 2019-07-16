@@ -3,7 +3,7 @@ import { Text } from "../../../Model/Text";
 
 const resolvers: ResolverMap = {
   Mutation: {
-    SetText: async (_, args: any) => {
+    SetTexts: async (_, args: any) => {
       const { title, text } = args;
       const overlapText: any = await Text.findOne({ title });
 

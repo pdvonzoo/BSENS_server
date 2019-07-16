@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const textSchema = new Schema({
   title: { type: String },
-  url: { type: String }
+  text: { type: String }
 });
 
 const Text = mongoose.model("Text", textSchema);

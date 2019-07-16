@@ -67,7 +67,7 @@ count: number | null;
 interface IMutation {
 __typename: "Mutation";
 SetImages: boolean | null;
-SetText: boolean | null;
+SetTexts: boolean | null;
 UploadMainInfo: IAWSinfo | null;
 addCart: boolean | null;
 deleteCart: boolean | null;
@@ -88,7 +88,7 @@ title?: string | null;
 url?: string | null;
 }
 
-interface ISetTextOnMutationArguments {
+interface ISetTextsOnMutationArguments {
 title?: string | null;
 text?: string | null;
 }

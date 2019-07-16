@@ -6,7 +6,7 @@ const resolvers: ResolverMap = {
     GetTexts: async (_, __) => {
       const texts = await Text.find();
       if (!texts) {
-        throw new Error("존재하는 이미지가 없습니다.");
+        throw new Error("존재하는 텍스트가 없습니다.");
       }
       return texts;
     }

@@ -41,5 +41,5 @@ type Image {
 
 type Text {
   title: String
-  url: String
+  text: String
 }
