@@ -33,3 +33,8 @@ type Address {
   create_at: Int
   updated_at: Int
 }
+
+type Image {
+  title: String
+  url: String
+}

@@ -22,9 +22,16 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
+GetImages: Array<IImage | null> | null;
 showCart: Array<IProduct | null> | null;
 seeProducts: Array<IProduct | null> | null;
 me: IUser | null;
+}
+
+interface IImage {
+__typename: "Image";
+title: string | null;
+url: string | null;
 }
 
 interface IProduct {
