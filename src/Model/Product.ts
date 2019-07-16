@@ -1,11 +1,12 @@
 import * as mongoose from "mongoose";
-import { productChildSchema } from "./ProductChild";
 
-const productSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  description: { type: String },
-  product_child: { type: productChildSchema },
-  create_at: { type: Date, required: true },
+const Schema = mongoose.Schema;
+
+const productSchema = new Schema({
+  productname: { type: String },
+  productimage: { type: String },
+  productchildid: { type: Schema.Types.ObjectId, ref: "ProductChild" },
+  create_at: { type: Date },
   updated_at: { type: Date, default: Date.now }
 });
 

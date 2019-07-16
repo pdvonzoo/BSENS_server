@@ -1,0 +1,3 @@
+type Mutation {
+  addCart(productid: String): Boolean
+}

@@ -1,0 +1,8 @@
+type Mutation {
+  UploadMainInfo(filename: String, filetype: String): AWSinfo
+}
+
+type AWSinfo {
+  signedRequest: String
+  url: String
+}

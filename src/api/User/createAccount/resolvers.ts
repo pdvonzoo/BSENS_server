@@ -2,6 +2,7 @@ import * as bcrypt from "bcrypt";
 import { ResolverMap } from "../../../Utils/gqlUtils";
 import { User } from "../../../Model/User";
 import { findUser } from "../../../Utils/commonUtils";
+// import { Address } from "../../../Model/Address";
 
 const resolvers: ResolverMap = {
   Mutation: {
@@ -26,7 +27,7 @@ const resolvers: ResolverMap = {
         password
       });
       await newUser.save();
-
+      // console.log(address);
       // const getAddress = await findAddress({ zonecode: address.zonecode });
       // if (!getAddress) {
       //   const newAddress = await new Address({ ...address });

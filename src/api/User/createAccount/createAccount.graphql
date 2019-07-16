@@ -1,16 +1,3 @@
-# type Address {
-#   addressType: String
-#   zonecode: String
-#   address: String
-#   roadAddress: String
-#   sido: String
-#   sigungu: String
-#   bname: String
-#   query: String
-#   create_at: String
-#   updated_at: String
-# }
-
 type Mutation {
   createAccount(
     role: String
@@ -20,7 +7,6 @@ type Mutation {
     username: String
     phonenumber: String
     zonecode: String
-    address: String
     userimage: String
   ): Boolean!
 }

@@ -1,0 +1,10 @@
+type Mutation {
+  createProduct(
+    productname: String
+    productimage: String
+    price: String
+    color: String
+    text: String
+    size: String
+  ): Boolean
+}

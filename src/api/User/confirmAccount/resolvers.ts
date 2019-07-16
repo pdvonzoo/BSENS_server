@@ -1,13 +1,14 @@
+import "dotenv/config";
 import * as bcrypt from "bcrypt";
 import { ResolverMap } from "../../../Utils/gqlUtils";
 import { findUser, generateToken } from "../../../Utils/commonUtils";
 
 const resolvers: ResolverMap = {
-  Query: {
-    cofirmAccount: async (_, args, { res }: any) => {
+  Mutation: {
+    cofirmAccount: async (_, args, { response }: any) => {
       const user: any = await findUser({ payload: { userid: args.userid } });
       if (!user) {
-        throw new Error("잘못된 아이디입니다.");
+        throw new Error("해당 아이디가 없습니다.");
       }
       const valid = await bcrypt.compare(args.secret, user.password);
       if (!valid) {
@@ -15,9 +16,20 @@ const resolvers: ResolverMap = {
       }
 
       const { refreshToken, accessToken } = generateToken(user);
-      res.cookie("refresh-token", refreshToken);
-      res.cookie("access-token", accessToken);
-
+      response.cookie("refresh-token", refreshToken);
+      response.cookie("access-token", accessToken);
+      return true;
+    },
+    invalidateTokens: async (_, __, { request }: any) => {
+      if (!request.userid) {
+        return false;
+      }
+      const user: any = await findUser({ payload: { userid: request.userid } });
+      if (!user) {
+        return false;
+      }
+      user.count += 1;
+      await user.save();
       return true;
     }
   }

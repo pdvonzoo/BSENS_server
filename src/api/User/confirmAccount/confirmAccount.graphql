@@ -1,3 +1,6 @@
-type Query {
-  cofirmAccount: Boolean
+type Mutation {
+  cofirmAccount(userid: String, secret: String): Boolean
+}
+type Mutation {
+  invalidateTokens: Boolean
 }

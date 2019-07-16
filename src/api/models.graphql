@@ -1,0 +1,35 @@
+type User {
+  _id: ID!
+  userid: String
+  password: String
+  email: String
+  addressid: String
+  phonenumber: String
+  username: String
+  userimage: String
+  create_at: String
+  updated_at: String
+  count: Int
+}
+
+type Product {
+  _id: ID!
+  productname: String
+  productimage: String
+  productchildid: String
+}
+
+type Address {
+  _id: ID!
+  addressType: String
+  zonecode: String
+  address: String
+  roadAddress: String
+  jibunAddress: String
+  sido: String
+  sigungu: String
+  bname: String
+  query: String
+  create_at: Int
+  updated_at: Int
+}
