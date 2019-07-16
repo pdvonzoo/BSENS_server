@@ -1,0 +1,3 @@
+type Mutation {
+  SetText(title: String, text: String): Boolean
+}

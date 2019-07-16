@@ -38,3 +38,8 @@ type Image {
   title: String
   url: String
 }
+
+type Text {
+  title: String
+  url: String
+}
