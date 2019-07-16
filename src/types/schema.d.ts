@@ -22,9 +22,23 @@ column: number;
 
 interface IQuery {
 __typename: "Query";
+GetImages: Array<IImage | null> | null;
+GetTexts: Array<IText | null> | null;
 showCart: Array<IProduct | null> | null;
 seeProducts: Array<IProduct | null> | null;
 me: IUser | null;
+}
+
+interface IImage {
+__typename: "Image";
+title: string | null;
+url: string | null;
+}
+
+interface IText {
+__typename: "Text";
+title: string | null;
+url: string | null;
 }
 
 interface IProduct {
@@ -52,6 +66,8 @@ count: number | null;
 
 interface IMutation {
 __typename: "Mutation";
+SetImages: boolean | null;
+SetTexts: boolean | null;
 UploadMainInfo: IAWSinfo | null;
 addCart: boolean | null;
 deleteCart: boolean | null;
@@ -65,6 +81,16 @@ deleteAccount: boolean;
 sendSMSAuth: boolean;
 updateAccount: boolean;
 verifyPhoneNumber: boolean;
+}
+
+interface ISetImagesOnMutationArguments {
+title?: string | null;
+url?: string | null;
+}
+
+interface ISetTextsOnMutationArguments {
+title?: string | null;
+text?: string | null;
 }
 
 interface IUploadMainInfoOnMutationArguments {
